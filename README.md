@@ -12,6 +12,8 @@ DevOps Engineer ( 데브옵스 엔지니어 )
     - Notify of test outcome ( 테스크 결과 알림 )
     - Deliver build to staging ( 빌드된 것을 스테이징에 전달 )
     - Deploy to production ( 프로덕션에 배포 )
+- Rollback (롤백)
+- 모니터링
 
 Tools
 1. Docker
