@@ -5,9 +5,12 @@
 
 # AWS Amplify
 모바일/웹 어플리케이션을 빠르게 구성+빌드+배포+운영까지 모든 라이프사이클을 한 곳에서 관리할 수 있도록 통합해둔 AWS의 풀스택 개발 통합 솔루션 서비스
+## 주요 기능
 * Admin UI 제공
 * 서비스 모니터링
 * 배포 모니터링
+## 관련 문서
+* [AWS Amplify 가이드](https://github.com/samdaseuss/Infra-DevOps/blob/main/DevOps/Amplify.md)
 
 [장점]
 * AWS 서비스와의 연동이 간편
