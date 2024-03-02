@@ -54,19 +54,25 @@ amplify pull --appId 앱 아이디
 amplify configure
 ```
 
+4. 프로젝트 루트 폴더에서 다음 명령을 실행해 Amplify CLI를 사용하여 앱을 이 백엔드 환경에 연결
+```
+amplify pull --appId 앱 아이디 --envName staging
+```
+
+※ 만약 에러가 난다면, amplify 관련 디렉터리 지우기
+```
+rm -rf amplify/
+```
+
 4. api 추가하기
 ```
 amplify add api
 ```
 
-5. 프로젝트 루트 폴더에서 다음 명령을 실행해 Amplify CLI를 사용하여 앱을 이 백엔드 환경에 연결
+5. 배포
 ```
-amplify pull --appId 앱 아이디 --envName staging
-```
+amplify push
 
-0. amplify 관련 디렉터리 지우기 (에러 날 경우)
-```
-rm -rf amplify/
 ```
 
 ## 배포 STEP
