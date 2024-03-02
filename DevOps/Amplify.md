@@ -5,11 +5,31 @@
 ```
 npm install -g @aws-amplify/cli
 ```
+
 2. 도움말 보는 방법
 다음 명령어를 쓰면 커멘드 사용법을 볼 수 있음
 ```
 amplify help
 ```
+
+3. 리소스 유무 확인
+인프라 관련 측면에서 `git diff` 버전이라고 보면 됨
+```
+amplify status
+```
+
+4. amplify push
+백엔드 리소스를 모두 빌드한 다음에 리모트에 푸쉬 -- Build all your local backend resources and provision it in the cloud.
+```
+amplify push
+```
+
+5. amplify publish
+백엔드 & 프론트엔드 리소스 모두 배포
+```
+amplify publish
+```
+
 
 ## 배포 환경 구축
 ### 로컬(콘솔) 배포
@@ -28,25 +48,25 @@ amplify pull --appId 앱 아이디
 * General에 앱에 대한 정보 들어있음
     * 앱 ARN : 아마존 리소스의 고유 번호 (아이디 값)
 
-로컬에서 pull을 받기 위한 access token 생성 (IAM 생성)
+3. 로컬에서 pull을 받기 위한 access token 생성 (IAM 생성)
 * 리소스가 있는 지역과 IAM 의 지역은 같야아함
 ```
 amplify configure
 ```
 
-amplify 관련 디렉터리 지우기
-```
-rm -rf amplify/
-```
-
-api 추가하기
+4. api 추가하기
 ```
 amplify add api
 ```
 
-프로젝트 루트 폴더에서 다음 명령을 실행해 Amplify CLI를 사용하여 앱을 이 백엔드 환경에 연결
+5. 프로젝트 루트 폴더에서 다음 명령을 실행해 Amplify CLI를 사용하여 앱을 이 백엔드 환경에 연결
 ```
 amplify pull --appId 앱 아이디 --envName staging
+```
+
+0. amplify 관련 디렉터리 지우기 (에러 날 경우)
+```
+rm -rf amplify/
 ```
 
 ## 배포 STEP
@@ -65,6 +85,13 @@ amplify pull --appId 앱 아이디 --envName staging
 * 디버깅에 용이
 * view build history
 
+## 폴더 구조
+### 📁 amplify
+#### 📄 .config
+#### 📄 
+
+
 ## 관련 문서
 * https://docs.amplify.aws/javascript/tools/cli/
 * [Set up Amplify CLI](https://docs.amplify.aws/javascript/tools/cli/start/set-up-cli/#configure-the-amplify-cli)
+* Amplify CLI를 이용한 벡엔드 골격 생성
