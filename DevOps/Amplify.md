@@ -1,4 +1,4 @@
-# Amplify 가이드
+# AWS Amplify 가이드
 
 ## CLI 설치
 1. npm 이용해서 CLI를 설치한다.
@@ -9,6 +9,44 @@ npm install -g @aws-amplify/cli
 다음 명령어를 쓰면 커멘드 사용법을 볼 수 있음
 ```
 amplify help
+```
+
+## 배포 환경 구축
+### 로컬(콘솔) 배포
+dev(데브) 환경의 리소스에 대해서는 콘솔에서 배포하도록 설정하는 것이 유용할 수 있다.
+
+1. 루트 디렉토리로 이동 후 초기화
+```
+amplify init
+```
+
+2. 엡 Pull 받기
+```
+amplify pull --appId 앱 아이디
+```
+로컬에 있는 프로젝트를 리모트와 연동 -- 이미 있는 프로젝트이므로 로컬에 pull을 받으면 됨
+* General에 앱에 대한 정보 들어있음
+    * 앱 ARN : 아마존 리소스의 고유 번호 (아이디 값)
+
+로컬에서 pull을 받기 위한 access token 생성 (IAM 생성)
+* 리소스가 있는 지역과 IAM 의 지역은 같야아함
+```
+amplify configure
+```
+
+amplify 관련 디렉터리 지우기
+```
+rm -rf amplify/
+```
+
+api 추가하기
+```
+amplify add api
+```
+
+프로젝트 루트 폴더에서 다음 명령을 실행해 Amplify CLI를 사용하여 앱을 이 백엔드 환경에 연결
+```
+amplify pull --appId 앱 아이디 --envName staging
 ```
 
 ## 배포 STEP
@@ -29,3 +67,4 @@ amplify help
 
 ## 관련 문서
 * https://docs.amplify.aws/javascript/tools/cli/
+* [Set up Amplify CLI](https://docs.amplify.aws/javascript/tools/cli/start/set-up-cli/#configure-the-amplify-cli)
