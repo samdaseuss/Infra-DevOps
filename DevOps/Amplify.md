@@ -17,14 +17,26 @@ amplify help
 ```
 amplify status
 ```
+* `Current Environment`: staging, main 등
 
-4. amplify push
+4. 환경 추가
+```
+amplify env add main
+```
+
+5. amplify env checkout staging
+현재 바라보고 있는 환경을 스테이징으로 바꾸는 명령어로 git checkout으로 브랜치를 바꾸는 것과 비슷
+```
+amplify env checkout staging
+```
+
+6. amplify push
 백엔드 리소스를 모두 빌드한 다음에 리모트에 푸쉬 -- Build all your local backend resources and provision it in the cloud.
 ```
 amplify push
 ```
 
-5. amplify publish
+7. amplify publish
 백엔드 & 프론트엔드 리소스 모두 배포
 ```
 amplify publish
